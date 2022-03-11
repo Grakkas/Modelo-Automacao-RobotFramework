@@ -16,5 +16,14 @@ Connect to postgres database
 Delete all users from database
     Connect to postgres database
 
-    Execute SQL String    DELETE from public.geeks;
-    Execute SQL String    DELETE from public.users;
+    Execute SQL String          DELETE from public.geeks;
+    Execute SQL String          DELETE from public.users;
+    Disconnect From Database
+
+Insert user in database
+    [Arguments]    ${user}
+    ${query}       Set Variable    INSERT INTO public.users (name, email, password_hash, is_geek) values ('${user}[first_name] ${user}[last_name]', '${user}[email]', '${user}[password]', false);
+
+    Connect to postgres database
+    Execute SQL String              ${query}
+    Disconnect From Database
