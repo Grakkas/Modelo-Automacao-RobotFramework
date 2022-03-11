@@ -11,14 +11,16 @@ def factory_new_user():
     }
     return user
 
+
 def factory_invalid_email():
     user = {
-        'first_name': 'Test',
-        'last_name': 'Automation',
+        'first_name': fake.first_name(),
+        'last_name': fake.last_name(),
         'email': 'teste_automation.com',
         'password': "123456"
     }
     return user
+
 
 def factory_obligated_fields():
     user = {

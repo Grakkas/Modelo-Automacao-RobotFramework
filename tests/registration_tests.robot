@@ -16,6 +16,9 @@ Register New User
     User Should Be Registered
 
 Register Existing Email
+    ${user}    Factory New User
+
+    Insert user in database               ${user}
     Go To Signup Page
     Fill Signup Form                      ${user}
     Submit Signup Form
